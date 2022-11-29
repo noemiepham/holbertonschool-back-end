@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 import requests
 from flask import Flask
-
-from flask_restful import Resource, Api
+import api
 
 app = Flask(__name__)
 
@@ -12,22 +11,25 @@ url = "http://127.0.0.1:5000/"
 response = requests.get(url=url)
 print(response.text)
 
+
 class Helloworld(Resource):
 
-	def __init__(self):
+    def __init__(self):
 
-		pass
+        pass
+
 
 def get(self):
 
-		return {
+    return {
 
-			"Hello": "World"
+        "Hello": "World"
 
-		}
+    }
+
 
 api.add_resource(Helloworld, '/')
 
 if __name__ == '__main__':
 
-	app.run(debug=True)
+    app.run(debug=True)
