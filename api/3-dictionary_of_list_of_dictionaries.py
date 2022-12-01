@@ -19,7 +19,7 @@ if __name__ == '__main__':
     [udoc.get(t.get("userId")).append({"task": t.get("title"),
                                        "completed": t.get("completed"),
                                        "username": undoc.get(
-                                               t.get("userId"))})
+        t.get("userId"))})
      for t in todo]
     with open("todo_all_employees.json", 'w') as jsf:
         json.dump(udoc, jsf)
